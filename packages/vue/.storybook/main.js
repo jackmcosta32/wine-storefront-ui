@@ -13,7 +13,15 @@ module.exports = {
     "@storybook/addon-links",
     "@storybook/addon-a11y",
     "@storybook/preset-scss",
-    "@storybook/addon-storysource", 
+    "@storybook/addon-storysource",
+    {
+      name: '@storybook/addon-postcss',
+      options: {
+        postcssLoaderOptions: {
+          implementation: require('postcss'),
+        },
+      },
+    },
   ],
   webpackFinal: async (config) => {
     config.module.rules.push({
